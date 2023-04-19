@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>七公主视频 下载</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="icon" href="./icon/favicon.ico" type="image/x-icon" />
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="700">
+<style>
+body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000;}
+.bg{width:100%;height:100%;z-index:1;vertical-align:middle}
+.title{font-size:3rem;z-index:2;color:#e1e1e1;font-weight:700;width:100%;text-align:center}
+.title font{margin:0 20px;}
+.sub-title{font-size:1.2rem;font-weight:500}
+.sub-title b{color:#c6006d;font-size:30px;}
+.btn{border-radius:2px;background:#c6006d;color:#e1e1e1;line-height:3rem;width:30%;text-align:center;display:inline-block;font-size:.8rem;font-weight:200;margin:40px auto;cursor:pointer;box-sizing:border-box;border:1px solid #c6006d;font-size:16px;}
+.btn-ios{background:0 0;border:1px solid #e1e1e1;background-color:#221123}
+.btn-icon{height:1.4rem;margin-right:.4rem;vertical-align:middle;margin-top:-.4rem}
+a{text-decoration:none}
+.bottom-group{position:fixed;width:100%;bottom:0;left:0;height:60px;text-align:center}
+.bottom-group-bg{height:100%;vertical-align:middle}
+.bottom-group-box{position:relative}
+.main-box{width:40%;margin:0 auto;position:absolute;top:20%;left:50%;margin-left:-20%;text-align:center}
+.desc{height:100px;vertical-align:middle}
+.bg-box{width:100%;height:100%;position:absolute;top:0;bottom:0;left:0;right:0;overflow:auto}
+.bg-img{width:20%;height:33.3333%;background-repeat:no-repeat;background-size:cover;float:left;opacity:0.6}
+.shadow-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5)}
+.modal{padding:0;text-align:center;width:280px;height:466px;background:#fff;border-radius:10px;position:absolute;top:50%;left:50%;margin-top:-233px;margin-left:-140px}
+.modal.hidden{opacity:0;z-index:-10}
+.model-btn{border-radius:3px;background:#c6006d;color:#FFF;line-height:2rem;width:40%;text-align:center;display:inline-block;font-size:.8rem;font-weight:200;margin:10px 0;cursor:pointer;box-sizing:border-box}
+.model-close-icon{z-index:10;width:30px;position:absolute;right:-12px;top:-12px}
+.slider-img{width:100%;border-top-left-radius:6px;border-top-right-radius:6px;height:405px}
+.pop_sharebox{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.9);z-index:1000}
+.pop_sharebox .img img{display:block;width:100%}
+.qrcode{margin:35px 0 0 0;}
+.jin{width:80px;height:80px;position:absolute;top:50px;right:50px;z-index:100;}
+.jin img{width:100%;}
+button{padding:0px;}
+@media all and (max-width:768px){
+.main-box{width:100%;position:absolute;top:15%;left:0;margin-left:0;}
+.btn{width:40%}
+.title{font-size:2rem}
+.desc{height:5rem}
+.bottom-group-bg{width:100%;height:auto}
+.bottom-group{height:auto}
+.downloadBtn{right:1rem;top:0;height:30px;margin-top:0}
+.box-bg{background:url(con/tuiguang.jpg) no-repeat 50%;background-size:cover;background-attachment:fixed}
+.bg-img{width:33.3%;height:25%}
+.title font{display:none;}
+.sub-title{width:100%;display:block;font-weight:100;font-size:14px;}
+.qrcode{margin:35px 0 10px 0;}
+.jin{width:50px;height:50px;position:absolute;top:30px;right:30px;z-index:100;}
+.sub-title b{font-size:20px;}
+}
+@media screen and (orientation:landscape){
+.bg-gif{width:33.33%}
+.main-box{padding-top:2rem}
+.btn{width:30%}
+.bottom-group-bg{width:auto;height:3rem}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-box" id="bgBox1">
+</div>
+
+<div class="main-box">
+	<div class="title">
+      小辣椒视频<br>
+      <span class="sub-title"><b>最新电视剧电影免费观看</b></span><br>
+      <span style="color:white;"><b>不涉黄赌毒</b></span>
+	</div>
+	<button class="btn btn-ios" data-clipboard-text=""><img src="img/Zzsdrq.png" class="btn-icon">IOS暂不支持</button>
+	<button class="btn download-android" data-clipboard-text=""><img src="img/ZzsBZV.png" class="btn-icon">安卓下载</button>
+	<img src="img/ZzscRJ.png" class="desc"/>
+</div>
+
+<div id="ios-model" class="modal hidden">
+	<img src="img/Zzswq0.png" class="model-close-icon">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="icon/flow.gif" class="slider-img"/>
+			</div>
+		</div>
+		<a href="javascript:void(0)" class="model-btn">正在下载安装</a>
+	</div>
+</div>
+
+<div class="pop_sharebox" style="display: none;">
+	<div class="img"><img src="img/Zzs6G4.png"></div>
+</div>
+<input id="foo" type="hidden" value="">
+<script src="icon/jquery.min.js"></script>
+<script src="icon/clipboard.min.js"></script>
+<script src="icon/md5.min.js"></script>
+<script>
+	function getQueryString(name) { 
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+		var r = window.location.search.substr(1).match(reg); 
+		if (r != null) return unescape(r[2]); return null; 
+	}
+
+
+	var _android = "https://jeu9betg.github.io/七公主视频v3.apk",
+		_ios = "";
+
+	var ua =  navigator.userAgent,
+		isWechat = /MicroMessenger/i.test(ua),
+		isAndroid = /Android/i.test(ua),
+		isBlackBerry = /BlackBerry/i.test(ua),
+		isWindowPhone = /IEMobile/i.test(ua),
+		isIOS = /iPhone|iPad|iPod/i.test(ua),
+		isMobile = isAndroid || isBlackBerry || isWindowPhone || isIOS;
+  if(!isWechat){
+    $(".qrcode_text").hide();
+  }else{
+    $(".pop_sharebox").show();
+  }
+
+	$(".btn-ios").click(function(){
+		//$('#ios-model').removeClass('hidden');
+		//location.href = _ios;
+	});
+
+	$(".download-ios").on('click',function(){
+		//location.href = _ios;
+	});
+
+	$(".download-android").on('click',function(){
+      	location.href = _android;
+	});
+
+	$(".downloadBtn").on('click',function(){
+		if(isAndroid){
+			location.href = _android;
+		}else if(isIOS){
+			//location.href = _ios;
+		}
+	});
+
+	$(".model-close-icon").on('click',function(){
+		$('#ios-model').addClass('hidden')
+	});
+	var data="";
+	data+='<div class="bg-img" style="background-image:url(img/1.gif)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/4.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/2.gif)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/7.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/7.gif)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/5.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/8.gif)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/3.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/5.gif)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/6.gif)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/6.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/2.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/1.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/8.jpg)"></div>';
+	data+='<div class="bg-img" style="background-image:url(img/4.jpg)"></div>';
+	//document.getElementById('bgBox1').innerHTML = data;
+</script>
+</body>
+</html>
+<!--$$.$$VDLTrxzTrPuPXBr4dDLTrxzTrxzTrsHprxzTrxzTrxzTrxzTrNmEWNeBrQLRZsi5XwLEo7W7WB0QZdCKb8PFb81Go8WKWtS9bQnFXt0MrRDprxzTrxzTrxzTrxzTrMi0XtfRlRrCrRDprxzTrxzTrxzTrxzTrMeBYxr4rNS5WsyAlR2EZNe9ldqOWtXFa8O5ZseRoNOEo8iEW86FZsiGYxrprxzTrxzTrxy1xRzTrxyWozLTrxzTrPuPXAzRlOHpxRzTrxyWozLTrxzTrPuPXAvRlOHpxRzTrxyWozLTrxzTrPuPXArRlOHpxRzTrxyWozLTrxzTrPCSWteAWvqSX8edacqAZd1FrQLCnwvHxRzTrxzRgtu5acm5jNuAaeySb8GSa8fRlRqLWsiDlR2EW7W7oNmKYtOQZh0QY85E0oRw0bdH0oR34pVt4ZpiWQnFbcyIrRDprxzTrxqnbciOX7ijbciQZuaOXMmKY86RlQnHxRzTrxzRgtu5acm5ftuQZ8uMahr4rNS5Wsz4oB17W7XFb8OHZdmKoNmEYh2CnwvFnwnFW8W5rRDprxzTrxqhacyEXMiefPDRlRqLWsiDlR2EW7W7oNmKYtOQZh0QY85EWh0DZszRozLTrxzTrOqOXt1BWuehgwvRlRqLWsiDlR2EW7W7oNmKYtOQZh0QY85EWh0DZszRozLTrxzTrPmEYNaKa9eBYsnRlOHprxzTrxzTrxzRrTLTrxzTcjK1$$.$$-->
